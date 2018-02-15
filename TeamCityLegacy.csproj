@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8836315-3FFF-44D4-854D-8C2902183664}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inedo.BuildMasterExtensions.TeamCity</RootNamespace>
+    <AssemblyName>TeamCityLegacy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;BuildMaster</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>BuildMaster</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BuildMaster.Web.Controls, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMaster.Web.Controls.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BuildMasterCore, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMasterCore.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.Agents.Client, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=9de986a2f8db80fc, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.Agents.Client.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.ExecutionEngine, Version=64.0.0.0, Culture=neutral, PublicKeyToken=68703f0e52007e75, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.ExecutionEngine.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Inedo.SDK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=29fae5dec3001603, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.SDK.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InedoLib, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\InedoLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ITeamCityConnectionInfo.cs" />
+    <Compile Include="Legacy\BuildNumberPicker.cs" />
+    <Compile Include="Legacy\SelectBuildConfigurationPicker.cs" />
+    <Compile Include="Legacy\GetArtifactAction.cs" />
+    <Compile Include="Legacy\GetArtifactActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Legacy\SelectBuildConfigurationVariable.cs" />
+    <Compile Include="Legacy\SelectBuildConfigurationVariableSetter.cs" />
+    <Compile Include="Legacy\TeamCityActionBase.cs" />
+    <Compile Include="TeamCityArtifactImporter.cs" />
+    <Compile Include="Legacy\TeamCityBuildImporter.cs" />
+    <Compile Include="Legacy\TeamCityBuildImporterEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\TeamCityBuildImporterTemplate.cs" />
+    <Compile Include="Legacy\TeamCityBuildImporterTemplateEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\TeamCityConfigurer.cs" />
+    <Compile Include="Legacy\TeamCityConfigurerEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legacy\TriggerBuildAction.cs" />
+    <Compile Include="Legacy\TriggerBuildActionEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeamCityBuildConfiguration.cs" />
+    <Compile Include="TeamCityBuildQueuer.cs" />
+    <Compile Include="TeamCityWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Legacy\BuildNumberPicker.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -Command "if (Test-Path C:\Projects\BuildMaster\Extensions -PathType Container) { Compress-Archive -Path '$(TargetDir)*' -DestinationPath C:\Projects\BuildMaster\Extensions\$(TargetName).zip -Force; Move-Item C:\Projects\BuildMaster\Extensions\$(TargetName).zip -Destination C:\Projects\BuildMaster\Extensions\$(TargetName).bmx -Force }"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
